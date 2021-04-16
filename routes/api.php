@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\API\ProductController;
+use App\Http\Controllers\API\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,7 @@ use App\Http\Controllers\API\ProductController;
 // });
 
 Route::post('/product/store', [ProductController::class, 'store']);
+
+// Route::middleware(['auth:api'])->group(function () {
+    Route::post('/cart/add', [CartController::class, 'addToCart']);
+// });
